@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Wife ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at top,#ffd9e5,#fff5f8 45%,#ffeef4);display:flex;align-items:center;justify-content:center;overflow:hidden;color:#3b1d28}
+.card{width:min(92%,650px);padding:42px 28px;text-align:center;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:30px;box-shadow:0 25px 70px rgba(174,58,99,.18);position:relative;z-index:2}
+.heart{font-size:72px;animation:pulse 1.3s infinite;filter:drop-shadow(0 8px 15px rgba(220,60,105,.25))}
+h1{font-size:clamp(32px,7vw,58px);margin:8px 0 12px;letter-spacing:-2px}
+.subtitle{font-size:18px;opacity:.75;margin-bottom:26px}
+.message{font-size:20px;line-height:1.75;margin:0 auto 28px;max-width:540px}
+button{border:0;border-radius:999px;padding:14px 25px;background:#d94b78;color:#fff;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 10px 25px rgba(217,75,120,.25);transition:.2s}
+button:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(217,75,120,.35)}
+#secret{display:none;margin-top:25px;padding:20px;border-radius:20px;background:rgba(255,230,238,.7);font-size:18px;line-height:1.7}
+.small{margin-top:24px;font-size:13px;opacity:.55}
+.float{position:fixed;bottom:-40px;font-size:24px;animation:rise linear forwards;z-index:1;pointer-events:none}
+@keyframes pulse{50%{transform:scale(1.12)}}@keyframes rise{to{transform:translateY(-110vh) rotate(20deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="heart">❤️</div>
+  <h1>For My Wife</h1>
+  <div class="subtitle">A tiny website made for the most special person in my life.</div>
+  <p class="message">
+    If I could choose one person to annoy, love, laugh with and grow old with...
+    <br><strong>I'd choose you every single time. 🥹❤️</strong>
+  </p>
+  <button onclick="showLove()">Open Your Surprise 💌</button>
+  <div id="secret">
+    You are my favorite notification, my safest place, and my happiest thought.
+    <br><br>
+    <strong>I love you more than yesterday, and I'll love you even more tomorrow. ❤️</strong>
+  </div>
+  <div class="small">Made with love • just for you ♡</div>
+</div>
+<script>
+function showLove(){
+  const s=document.getElementById('secret');
+  s.style.display=s.style.display==='block'?'none':'block';
+  for(let i=0;i<18;i++) setTimeout(makeHeart,i*90);
+}
+function makeHeart(){
+  const h=document.createElement('div');h.className='float';
+  h.textContent=['❤️','💗','💕','💖','✨'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+}
+setInterval(()=>{if(Math.random()<.55)makeHeart()},900);
+</script>
+</body>
+</html>
